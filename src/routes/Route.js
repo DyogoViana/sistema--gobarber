@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
-export default function RouteWrapper ({
+export default function RouteWrapper({
   component: Component,
   isPrivate,
   ...rest
 }) {
-  const signed = false;
+  const signed = false; // Controla de forma manual a entrada do usuário (logIn).
 
   // Redireciona o usuário de volta ao login, caso não esteja logado.
   if (!signed && isPrivate) {
@@ -22,7 +22,7 @@ export default function RouteWrapper ({
   return <Route {... rest} component={Component} />;
 }
 
-RouteWrapper.PropTypes = {
+RouteWrapper.propTypes = {
   isPrivate: PropTypes.bool,
   component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
 };
