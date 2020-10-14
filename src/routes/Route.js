@@ -10,7 +10,7 @@ export default function RouteWrapper({
   isPrivate,
   ...rest
 }) {
-  const signed = true; // Controla de forma manual a entrada do usuário (logIn).
+  const signed = false; // Controla de forma manual a entrada do usuário (logIn).
 
   // Redireciona o usuário de volta ao login, caso não esteja logado.
   if (!signed && isPrivate) {
