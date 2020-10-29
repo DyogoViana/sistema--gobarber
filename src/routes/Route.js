@@ -4,13 +4,14 @@ import { Route, Redirect } from 'react-router-dom';
 
 import AuthLayout from '../pages/_layouts/auth';
 import DefaultLayout from '../pages/_layouts/default';
+import store from '~/store';
 
 export default function RouteWrapper({
 	component: Component,
 	isPrivate,
 	...rest
 }) {
-	const signed = false; // Controla de forma manual a entrada do usuário (logIn).
+	const { signed } = store.getState().auth;
 
 	// Redireciona o usuário de volta ao login, caso não esteja logado.
 	if (!signed && isPrivate) {
@@ -28,7 +29,7 @@ export default function RouteWrapper({
 	return (
 		<Route
 			{...rest}
-			render={(props) => (
+			render={props => (
 				<Layout>
 					<Component {...props} />
 				</Layout>
