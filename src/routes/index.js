@@ -9,13 +9,13 @@ import Dashboard from '~/pages/Dashboard';
 import Profile from '~/pages/Profile';
 
 export default function Routes() {
-  return (
-    <Switch>
-      <Route path="/" exact component={SingIn} />
-      <Route path="/register" component={SingUp} />
+	return (
+		<Switch>
+			<Route path="/" exact component={SingIn} />
+			<Route path="/register" component={SingUp} />
 
-      <Route path="/dashboard" component={Dashboard} isPrivate />
-      <Route path="/profile" component={Profile} isPrivate />
-    </Switch>
-  );
+			<Route path="/dashboard" component={Dashboard} isPrivate />
+			<Route path="/profile" component={Profile} isPrivate />
+		</Switch>
+	);
 }

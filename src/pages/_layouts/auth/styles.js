@@ -34,7 +34,7 @@ export const Content = styled.div`
 		}
 
 		span {
-			color: #C2A96D;
+			color: #c2a96d;
 			font-weight: bold;
 			align-self: flex-start;
 			margin: 0 30px 10px;
@@ -48,7 +48,7 @@ export const Content = styled.div`
 			color: #fff;
 			border: 0;
 			border-radius: 4px;
-			background: #C19BCC;
+			background: #c19bcc;
 			transition: background 0.2s;
 
 			&:hover {
