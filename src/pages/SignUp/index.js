@@ -1,9 +1,12 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
 import logo from '~/assets/logo_Gobarber.svg';
+
+import { signUpRequest } from '~/store/modules/auth/actions';
 
 // validação usando o Yup.
 const schema = Yup.object().shape({
@@ -18,9 +21,12 @@ const schema = Yup.object().shape({
 		.required('A senha é obrigatória.'),
 });
 
+// Sign Up.
 export default function SignUp() {
-	function handleSubmit(data) {
-		console.tron.log(data);
+	const dispatch = useDispatch();
+
+	function handleSubmit({ name, email, password }) {
+		dispatch(signUpRequest(name, email, password));
 	}
 
 	return (
